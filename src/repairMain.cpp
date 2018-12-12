@@ -3,7 +3,8 @@
 #include <iostream>
 
 int main(){
-    RepairArray(100);
+    RepairArray rp_arr{100};
+
     return 0;
 }
 
