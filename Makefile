@@ -31,13 +31,14 @@ endif
 $(TRG): $(OBJS)
 	$(CXX) -o $@ $^
 
-# resolve header dependency
+# resolve header dependency from the second time
 -include $(DEPS)
 
 # each compile
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) -o $@ -c $(CXXFLAGS) $<
 
+# empty target
 .PHONY: clean
 clean: 
 	$(RM) $(TRG) $(OBJS) $(DEPS)
