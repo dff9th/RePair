@@ -22,7 +22,7 @@ buildtype = release
 ifeq ($(buildtype), release)
 	CXXFLAGS += -O3
 else ifeq ($(buildtype), debug)
-	CXXFLAGS += -O0 -g
+	CXXFLAGS += -O0 -g -D_DEBUG
 else
 	$(error buildtype must be release or debug)
 endif

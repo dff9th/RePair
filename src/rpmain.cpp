@@ -1,15 +1,17 @@
-#include "rputil.hpp"
-#include <vector>
-#include <string>
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <vector>
 
-int main() {
-    struct RpTriWord *twd{};
+#include "rputil.hpp"
+
+
+int main(int argc, char **argv) {
+    RpStruct rp{};
     std::string ifname{};
     ErrorCode err{};
 
-    MakeTriWordFromFile(twd, ifname, err);
+    rp.MakeFromFile(ifname, err);
 
     return 0;
 }
