@@ -3,7 +3,7 @@ stages:
 
 build:
   stage: build
-  tag: docker
+  tags: docker
   image: gcc:latest
   script:
     - make
