@@ -1,3 +1,9 @@
-/target/*
-/obj/*
+# GoogleTest
+/include/gtest
+/include/gmock
+
+# Object directory
+/release/
+/lib/
+
 !*.gitkeep
