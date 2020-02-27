@@ -1,12 +1,15 @@
+/*
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
 #include "rputil.hpp"
+*/
 
 
 int main(int argc, char **argv) {
+    /*
     RpStruct rp{};
     std::string ifname{};
     ErrorCode err{};
@@ -14,4 +17,5 @@ int main(int argc, char **argv) {
     rp.MakeFromFile(ifname, err);
 
     return 0;
+    */
 }
