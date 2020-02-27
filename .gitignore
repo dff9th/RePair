@@ -3,7 +3,7 @@
 /include/gmock
 
 # Object directory
-/release/
+/build/
 /lib/
 
 !*.gitkeep
