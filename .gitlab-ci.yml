@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
 
 build:
   stage: build
@@ -7,4 +8,15 @@ build:
     - docker
   image: gcc:latest
   script:
+    - mkdir build
+    - cd build
+    - cmake ..
     - make
+
+test: 
+  stage: test
+  dependencies:
+    - build
+  script:
+    - ./build/bin/test_sample
+
