@@ -6,7 +6,7 @@ build:
   stage: build
   tags:
     - docker
-  image: gcc:latest
+  image: gcc-cmake:latest
   script:
     - mkdir build
     - cd build
