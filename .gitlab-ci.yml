@@ -19,12 +19,10 @@ build:
     paths:
       - build/bin
 
-
 test: 
   stage: test
   dependencies:
     - build
   script:
     - find . -type f
-    - ./build/bin/test_sample
-
+    - ./build/bin/test
