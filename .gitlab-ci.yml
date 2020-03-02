@@ -15,11 +15,16 @@ build:
     - cd build
     - cmake ..
     - make
+  artifacts:
+    paths:
+      - build/bin
+
 
 test: 
   stage: test
   dependencies:
     - build
   script:
+    - find . -type f
     - ./build/bin/test_sample
 
