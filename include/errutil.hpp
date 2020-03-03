@@ -4,6 +4,7 @@
 
 enum class ErrorCode {
     SUCCESS,
+    ERROR_INVALID_ARG,
     ERROR_FILE_OPEN
 };
 
