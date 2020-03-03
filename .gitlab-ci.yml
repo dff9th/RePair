@@ -24,5 +24,5 @@ test:
   dependencies:
     - build
   script:
-    - find . -type f
-    - ./build/bin/test
+    - ./build/bin/argparser_test
+    - ./build/bin/main_test
