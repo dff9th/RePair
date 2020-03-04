@@ -1,10 +1,8 @@
-#include <string>
-#include <vector>
-
 #include "errutil.hpp"
 
-extern void ParseArguments(std::vector<std::string> argv) {
-    if (argv.size() == 0) {
+extern void ParseArguments(const int argc, const char **argv) {
+    const int ARG_NUM {1};
+    if (argc != ARG_NUM) {
         throw ErrorCode::ERROR_INVALID_ARG;
     }
 }

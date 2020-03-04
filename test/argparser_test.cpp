@@ -10,6 +10,7 @@ namespace internal {
 }
 
 TEST(CaseArgParser, ParseArguments) {
-    vector<string> argv {};
-    EXPECT_THROW(ParseArguments(argv), ErrorCode);
+    const int argc {0};
+    const char **argv {};
+    EXPECT_THROW(ParseArguments(argc, argv), ErrorCode);
 }

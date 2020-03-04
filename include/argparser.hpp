@@ -1,4 +1,1 @@
-#include <string>
-#include <vector>
-
-extern void ParseArguments(std::vector<std::string> argv);
+extern void ParseArguments(const int argc, const char **argv);
