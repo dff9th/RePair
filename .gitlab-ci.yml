@@ -25,4 +25,3 @@ test:
     - build
   script:
     - ./build/bin/argparser_test
-    - ./build/bin/main_test
