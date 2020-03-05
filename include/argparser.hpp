@@ -1,1 +1,1 @@
-extern void ParseArguments(const int argc, const char **argv);
+extern void ParseArguments(const int argc, const char* const* argv);

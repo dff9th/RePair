@@ -9,8 +9,10 @@ using std::vector;
 namespace internal {
 }
 
-TEST(CaseArgParser, ParseArguments) {
-    const int argc {0};
-    const char **argv {};
-    EXPECT_THROW(ParseArguments(argc, argv), ErrorCode);
+TEST(ParseArguments, InvalidArg) {
+    // Invalide argc
+    {
+        char **argv {};
+        EXPECT_THROW(ParseArguments(0, argv), ErrorCode);
+    }
 }
