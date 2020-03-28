@@ -11,6 +11,7 @@ build:
     - docker
   image: dff9th/gcc_cmake:9.3.0
   script:
+    - ldconfig
     - mkdir build
     - cd build
     - CXX=/usr/local/bin/g++ cmake ..
