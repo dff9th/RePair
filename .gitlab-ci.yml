@@ -13,7 +13,7 @@ build:
   script:
     - mkdir build
     - cd build
-    - cmake ..
+    - CXX=/usr/local/bin/g++ cmake ..
     - make
   artifacts:
     paths:
