@@ -9,7 +9,7 @@ build:
   stage: build
   tags:
     - docker
-  image: rikorose/gcc-cmake:latest
+  image: dff9th/gcc_cmake:9.3.0
   script:
     - mkdir build
     - cd build
