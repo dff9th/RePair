@@ -1,12 +1,12 @@
 add_executable(repair main.cpp)
 if (BUILD_SHARED_LIBS)
-    add_library(argparser SHARED argparser.cpp)
+    add_library(parsedarg SHARED parsedarg.cpp)
     target_link_libraries(repair INTERFACE
-        argparser
+        parsedarg
         )
 else()
-    add_library(argparser STATIC argparser.cpp)
+    add_library(parsedarg STATIC parsedarg.cpp)
     target_link_libraries(repair PRIVATE
-        argparser
+        parsedarg
         )
 endif()
