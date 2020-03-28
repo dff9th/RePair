@@ -3,6 +3,8 @@
 #include "parsedarg.hpp"
 #include "errutil.hpp"
 
+using std::string;
+
 class ParsedArgTest : public ::testing::Test {
   protected:
     void FewArgs() {
@@ -21,8 +23,8 @@ class ParsedArgTest : public ::testing::Test {
         const int argc {3};
         const char* const argv[argc+1] {"a.out", "infile", "outfile", 0};
         ParsedArg parg(argc, argv);
-        EXPECT_STREQ(parg._infile_name, "infile");
-        EXPECT_STREQ(parg._outfile_name, "outfile");
+        EXPECT_EQ(parg._infile_name, string {"infile"});
+        EXPECT_EQ(parg._outfile_name, string {"outfile"});
     }
 };
 

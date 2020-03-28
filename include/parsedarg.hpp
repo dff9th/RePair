@@ -1,12 +1,13 @@
 #ifndef PARSEDARG_20200328
 #define PARSEDARG_20200328
 
+#include <string>
 #include "errutil.hpp"
 
 class ParsedArg {
   private:
-    const char* _infile_name;
-    const char* _outfile_name;
+    std::string _infile_name;
+    std::string _outfile_name;
 
   public:
     friend class ParsedArgTest;
