@@ -3,20 +3,37 @@
 #include "parsedarg.hpp"
 #include "errutil.hpp"
 
-TEST(ParsedArg, FewArgs) {
-    const int argc {2};
-    const char* const argv[argc+1] {"a.out", "outfile", 0};
-    EXPECT_THROW(ParsedArg(argc, argv), ErrorCode);
+class ParsedArgTest : public ::testing::Test {
+  protected:
+    void FewArgs() {
+        const int argc {2};
+        const char* const argv[argc+1] {"a.out", "infile", 0};
+        EXPECT_THROW(ParsedArg(argc, argv), ErrorCode);
+    }
+
+    void ManyArgs() {
+        const int argc {4};
+        const char* const argv[argc+1] {"a.out", "infile", "outfile", "extra", 0};
+        EXPECT_THROW(ParsedArg(argc, argv), ErrorCode);
+    }
+
+    void ValidArgs() {
+        const int argc {3};
+        const char* const argv[argc+1] {"a.out", "infile", "outfile", 0};
+        ParsedArg parg(argc, argv);
+        EXPECT_STREQ(parg._infile_name, "infile");
+        EXPECT_STREQ(parg._outfile_name, "outfile");
+    }
+};
+
+TEST_F(ParsedArgTest, FewArgs) {
+    FewArgs();
 }
 
-TEST(ParsedArg, ManyArgs) {
-    const int argc {4};
-    const char* const argv[argc+1] {"a.out", "outfile", "infile", "extra", 0};
-    EXPECT_THROW(ParsedArg(argc, argv), ErrorCode);
+TEST_F(ParsedArgTest, ManyArgs) {
+    ManyArgs();
 }
 
-TEST(ParsedArg, ValidArg) {
-    const int argc {3};
-    const char* const argv[argc+1] {"a.out", "outfile", "infile", 0};
-    EXPECT_NO_THROW(ParsedArg(argc, argv));
+TEST_F(ParsedArgTest, ValidArgs) {
+    ValidArgs();
 }

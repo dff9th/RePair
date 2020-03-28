@@ -9,6 +9,7 @@ class ParsedArg {
     const char* _outfile_name;
 
   public:
+    friend class ParsedArgTest;
     ParsedArg (const int argc, const char* const *argv) {
         const int ARG_NUM {3};
         if (argc != ARG_NUM) {
