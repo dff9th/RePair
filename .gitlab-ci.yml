@@ -24,4 +24,4 @@ test:
   dependencies:
     - build
   script:
-    - ./build/bin/argparser_test
+    - ./build/bin/parsedarg_test
