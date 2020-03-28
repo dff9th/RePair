@@ -1,2 +1,1 @@
-"let g:ale_cpp_gcc_options = '-std=c++11 -I./include -I./test/googletest/googlemock/include -I./test/googletest/googletest/include -Wall'
-let g:ale_cpp_gcc_options = '-std=c++14 -I./include -I./test/googletest/googlemock/include -I./test/googletest/googletest/include -Wall'
+let g:ale_cpp_gcc_options = '-std=c++11 -I./include -I./test/googletest/googlemock/include -I./test/googletest/googletest/include -Wall'
