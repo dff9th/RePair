@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+#include "err.hpp"
 #include "parsedarg.hpp"
 //#include "rputil.hpp"
 
@@ -12,8 +13,12 @@ int main(int argc, char **argv) {
     //ErrorCode err{};
 
     //rp.MakeFromFile(ifname, err);
-    
-    ParsedArg parg(argc, argv);
+   
+    try {
+        ParsedArg parg(argc, argv);
+    } catch (Error err) {
+        err.exit();
+    }
 
     return 0;
 }

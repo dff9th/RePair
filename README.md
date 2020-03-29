@@ -5,7 +5,7 @@ Implementation of RePair algorithm with C++
 ```
 mkdir build
 cd build
-cmake ..
+CXX=g++ cmake ..
 make
 ```
 
