@@ -1,18 +1,29 @@
 add_subdirectory(googletest)
 
-add_executable(err_test err_test.cpp)
-target_link_libraries(err_test PRIVATE
-    err
-    gtest
-    gtest_main
-    pthread
-)
+add_executable(all_test
+    err_test
+    parsedarg_test
+    )
+if (BUILD_SHARED_LIBS)
+    add_library(err_test SHARED err_test.cpp)
+    add_library(parsedarg_test SHARED parsedarg_test.cpp)
+    target_link_libraries(all_test INTERFACE
+        err
+        parsedarg
+        gtest
+        gtest_main
+        pthread
+        )
+else()
+    add_library(err_test STATIC err_test.cpp)
+    add_library(parsedarg_test STATIC parsedarg_test.cpp)
+    target_link_libraries(all_test PRIVATE
+        err
+        parsedarg
+        gtest
+        gtest_main
+        pthread
+        )
+endif()
 
-add_executable(parsedarg_test parsedarg_test.cpp)
-target_link_libraries(parsedarg_test PRIVATE
-    err
-    parsedarg
-    gtest
-    gtest_main
-    pthread
-)
+
