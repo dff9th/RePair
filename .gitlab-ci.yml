@@ -11,6 +11,10 @@ build:
     - docker
   image: dff9th/gcc-cmake:9.3.0-3.17.0
   script:
+    - pwd
+    - ls
+    - ls include
+    - ls include/gtest
     - mkdir build
     - cd build
     - CXX=g++ cmake ..
