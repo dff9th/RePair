@@ -13,6 +13,7 @@ build:
   script:
     - cp -r test/googletest/googlemock/include/gmock include/
     - cp -r test/googletest/googlemock/include/gmock include/
+    - ls include
     - mkdir build
     - cd build
     - CXX=g++ cmake ..
