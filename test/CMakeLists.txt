@@ -1,5 +1,10 @@
 add_subdirectory(googletest)
 
+include_directories(AFTER
+    ${CMAKE_CURRENT_SOURCE_DIR}/googletest/googletest/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/googletest/googlemock/include
+    )
+
 add_executable(all_test
     err_test
     parsedarg_test

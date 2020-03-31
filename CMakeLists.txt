@@ -4,9 +4,6 @@ project(RePair VERSION 1.0.0)
 include_directories(AFTER
     ${PROJECT_SOURCE_DIR}/include
     )
-link_directories(
-    ${PROJECT_SOURCE_DIR}/lib
-    )
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
