@@ -1,9 +1,4 @@
-# GoogleTest
-/include/gtest
-/include/gmock
-
 # Object directory
 /build/
-/lib/
 
 !*.gitkeep
